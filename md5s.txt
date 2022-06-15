@@ -1,0 +1,3 @@
+MD5 (./LDC/phrase_fragment.csv) = 492a744f8c6683bb4fba21d9f81976d5
+MD5 (./LDC/char.csv) = 0a8d889872c76efe7a35d1f4c917158a
+MD5 (./LDC/word.csv) = 704d788d26cf7591dfbf52f5e330a948
