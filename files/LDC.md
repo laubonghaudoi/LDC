@@ -60,10 +60,14 @@ The corpus has three csv files: `char.csv`, `word.csv` and `phrase_fragment.csv`
 
 Note that we seperate multi-character word entries into two files, `word.csv` and `phrase_fragementcsv`. This is for the convenience of different applications. `phrase_fragementcsv.csv` contains multi-character entries that are phrases, sentences, or sentence fragments, which are usually longer in length than entries in `word.csv`.
 
-All data is stored in UTF-8 encodings. There are currently ~34k entries in `char.csv`, ~95k entries in `word.csv` and ~8k entreis in `phrase_fragment.csv`
+All data is stored in UTF-8 encodings. There are currently ~34k entries in `char.csv`, ~95k entries in `word.csv` and ~8k entries in `phrase_fragment.csv`
 
-rime-cantonese is also open sourced on GitHub atuhttps://github.com/CanCLID/rime-cantonese-upstream. It hasa sdownstream version which is reformatted as to serve as an Input Method (IME) database, link: https://github.com/rime/rime-cantonese.
+rime-cantonese is also open sourced on GitHub atuhttps://github.com/CanCLID/rime-cantonese-upstream. It has a downstream version which is reformatted as to serve as an Input Method (IME) database, link: https://github.com/rime/rime-cantonese.
 
 ## Checksums
 
-Please see `md5s.txt`.
+MD5 (.//phrase_fragment.csv) = 64f1e64402f717de62990e47d2aa8ce7
+MD5 (.//char.csv) = fd22025d6789f60a0e473124f0bdc21b
+MD5 (.//word.csv) = 3daf6a554e0595ced71d8555a47007d6
+MD5 (.//LDC.md) = e1fe4b09526317e06d80dbf7934d4e15
+MD5 (.//md5s.txt) = d41d8cd98f00b204e9800998ecf8427e
