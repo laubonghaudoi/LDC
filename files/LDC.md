@@ -26,17 +26,25 @@ For characters that are missing in the primary source yet collected in the suppl
 
 ### About simplified Chinese characters
 
-The lexicon **does not include any simplified characters** introduced in the Character Simplification Scheme for the following reasons.
+The lexicon **does not include any simplified Chinese characters** for the following reasons.
 
-The conversion from traditional Chinese to simplified Chinese is technically more accurate than that from simplified Chinese to traditional Chinese because traditional Chinese characters are less ambiguous. For example, the traditional Chinese characters 發 (“distribute; prosper”) and 髮 (“hair”) are both written as 发 in simplified Chinese. Therefore, when converting the character 发 from simplified Chinese to traditional Chinese, one must determine the correct character based on the context, which may result in a loss of accuracy.
+The conversion from traditional Chinese to simplified Chinese is technically more accurate than that from simplified Chinese to traditional Chinese because traditional Chinese characters are less ambiguous. For example, the traditional Chinese characters 發 (“distribute; prosper”) and 髮 (“hair”) are both written as 发 in simplified Chinese. Therefore, when converting the character 发 from simplified Chinese to traditional Chinese, one must determine the correct character based on the context, which may result in a loss of accuracy. In contrast, one can convert traditional Chinese to simplified Chinese very easily using the Open Chinese Convert (OpenCC) program with an accuracy of nearly 100%.
 
-Besides, simplified Chinese characters are more tailored to Mandarin Chinese than to Cantonese because some Chinese characters are simplified by replacing their phonetic components with simpler components that are homophonous in Mandarin, whereas they are not necessarily homophonous in Cantonese. For example, the traditional Chinese character 劇 is simplified as 剧 because the new phonetic component 居 (pronunced jū in Mandarin) sounds similar to the original character 劇 (pronunced jù in Mandarin). However, the two characters are pronunced kek6 and geoi1 in Cantonese, respectively, which are totally different. Therefore, some simplified characters may cause confusion and trouble for Cantonese users.
+Besides, simplified Chinese characters are more tailored to Mandarin Chinese than to Cantonese because some Chinese characters are simplified by replacing their phonetic components with simpler components that are homophonous in Mandarin, whereas they are not necessarily homophonous in Cantonese. For example, the traditional Chinese character 劇 is simplified as 剧 because the new phonetic component 居 (pronunced jū in Mandarin) sounds similar to the original character 劇 (pronunced jù in Mandarin). However, in Cantonese, the two characters are pronunced kek6 and geoi1, respectively, which are totally different. Therefore, some simplified characters may cause confusion and trouble for Cantonese users.
 
-However, the lexicon does collect other character variants, such as Japanese Shinjitai characters and Vietnamese Chữ Nôm for ease of retrieval and input.
+### About regional variants of traditional Chinese characters
+
+TODO: https://ayaka.shn.hk/cc/
+
+Besides simplified characters, the issue of character variants also needs to be addressed (note that this is different from orthographic character choice, which we will discuss in the word entries section). To ensure the consistency while keeping complexities as low as possible, rime-cantonese takes advantage of Open Chinese Convert (OpenCC), an open-source library which supports multi-way conversions between different regional variants of Chinese characters. OpenCC maintains a standard for all Chinese character variants (we will call it “the OpenCC standard” or “OpenCC variants” from now on). The OpenCC standard character list keeps the most semantic contrasts between code points and servers as the baseline character variants. And with this baseline, the library can convert characters between Mainland Simplified, Hong Kong traditional, Taiwan traditional variants with this standard.
+
+We recommend accompanying the OpenCC library when using rime-cantonese in applications. For instance, when building a Cantonese transliteration module, one can generate the missing Simplified Chinese variants first with OpenCC in order to get a comprehensive character-to-pronunciation mapping list.
 
 ### About variants Chinese characters
 
-Besides simplified characters, the issue of character variants also needs to be addressed (note that this is different from orthographic character choice, which we will discuss in the word entries section). To ensure the consistency while keeping complexities as low as possible, rime-cantonese takes advantage of Open Chinese Convert (OpenCC), an open-source library which supports multi-way conversions between different regional variants of Chinese characters. OpenCC maintains a standard for all Chinese character variants (we will call it “the OpenCC standard” or “OpenCC variants” from now on). The OpenCC standard character list keeps the most semantic contrasts between code points and servers as the baseline character variants. And with this baseline, the library can convert characters between Mainland Simplified, Hong Kong traditional, Taiwan traditional variants with this standard. We recommend accompanying the OpenCC library when using rime-cantonese in applications. For instance, when building a Cantonese transliteration module, one can generate the missing Simplified Chinese variants first with OpenCC in order to get a comprehensive character-to-pronunciation mapping list.
+TODO:
+
+In spite of this, the lexicon does collect some variants Chinese characters, such as Japanese Shinjitai characters and Vietnamese Chữ Nôm for ease of retrieval and input.
 
 ## Multi-character entries (word entries)
 
@@ -53,9 +61,11 @@ There are multiple data sources of word entries. The majority of the entries are
    1. 地道廣州話用語
 1. Selected entries from rime-cantonese users' donated user dictionaries
 
-“Selected entries” means that we removed ill-formed or uncommon words based on subjective judgement and retained only the common and sensible words in daily usage. This helped to reduce the size the redundancy of the lexicon.
+“Selected entries” means that we removed incorrect or uncommon words based on subjective judgement and retained only the common and sensible words in daily usage. This helped to reduce the size the redundancy of the lexicon.
 
 ### About character variant choice
+
+TODO:
 
 Different from char entries, which include all character variants except Simplified Chinese variants, all word entries characters are store in the form of OpenCC standard variants. One can convert the characters into Hong Kong, Taiwan or Mainland China variants with the OpenCC program based on the use case.
 
@@ -67,16 +77,16 @@ Cantonese is known for its abundant sentence-final particles, and the Cantonese 
 
 ## Directory Structure & File Format Specific Details
 
-The corpus has three csv files: `char.csv`, `word.csv` and `phrase_fragment.csv`. All files contain two columns:
+The corpus consists of three CSV files: `char.csv`, `word.csv` and `phrase_fragment.csv`. All files contain two columns:
 
 - `char`: The Chinese character(s) of this lexical entry
-- `jyutping`: The Jyutping pronunciation of this lexical entry
+- `jyutping`: The pronunciation in Jyutping of this lexical entry
 
 Note that we separate the multi-character word entries into two files, `word.csv` and `phrase_fragementcsv`. This is for the convenience of different applications. `phrase_fragementcsv.csv` contains multi-character entries that are phrases, sentences, or sentence fragments, which are usually longer in length than entries in `word.csv`.
 
 All data is stored in UTF-8 encodings. There are currently ~34k entries in `char.csv`, ~95k entries in `word.csv` and ~8k entries in `phrase_fragment.csv`
 
-rime-cantonese is also open sourced on GitHub at https://github.com/CanCLID/rime-cantonese-upstream. It has a downstream version which is reformatted as to serve as an Input Method (IME) database, link: https://github.com/rime/rime-cantonese.
+rime-cantonese is also open sourced on GitHub at <https://github.com/CanCLID/rime-cantonese-upstream>. There is also a downstream version that is reformatted to serve as an Input Method (IME) database, link: <https://github.com/rime/rime-cantonese>.
 
 ## Checksums
 
