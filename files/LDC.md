@@ -22,19 +22,19 @@ To ensure the correctness of pronunciation and the comprehensiveness of characte
 1. Chinese Character Database: With Word-formations, Phonologically Disambiguated According to the Cantonese Dialect. [Source](https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/)
 1. jyut.net (_Cantonese pronunciation materials summa_, this site is a collection of multiple dictionaries) [Source](https://jyut.net/)
 
-For characters that are missing in the primary source yet collected in the supplementary sources, we normalize them before including them in our lexicon, based on the guidelines described in the following sub-sections.
+For characters that are missing from the primary source yet present in the supplementary sources, we normalize them before including them in our lexicon, based on the guidelines described in the following sub-sections.
 
 ### About simplified Chinese characters
 
 The lexicon **does not include any simplified Chinese characters** for the following reasons.
 
-The conversion from traditional Chinese to simplified Chinese is technically more accurate than that from simplified Chinese to traditional Chinese because traditional Chinese characters are less ambiguous. For example, the traditional Chinese characters 發 (“distribute; prosper”) and 髮 (“hair”) are both written as 发 in simplified Chinese. Therefore, when converting the character 发 from simplified Chinese to traditional Chinese, one must determine the correct character based on the context, which may result in a loss of accuracy. In contrast, one can convert traditional Chinese to simplified Chinese very easily using the Open Chinese Convert (OpenCC) program with an accuracy of nearly 100%.
+The conversion from traditional Chinese to simplified Chinese is technically more accurate than that from simplified Chinese to traditional Chinese because traditional Chinese characters are less ambiguous. For example, the traditional Chinese characters 發 (“distribute; prosper”) and 髮 (“hair”) are both written as 发 in simplified Chinese. Therefore, when converting the character 发 from simplified Chinese to traditional Chinese, one must determine the correct character based on the context, which may result in a loss of accuracy. In contrast, one can convert traditional Chinese to simplified Chinese using the Open Chinese Convert (OpenCC) program with an accuracy of nearly 100%.
 
 Besides, simplified Chinese characters are more tailored to Mandarin Chinese than to Cantonese because some Chinese characters are simplified by replacing their phonetic components with simpler components that are homophonous in Mandarin, whereas they are not necessarily homophonous in Cantonese. For example, the traditional Chinese character 劇 is simplified as 剧 because the new phonetic component 居 (pronunced jū in Mandarin) sounds similar to the original character 劇 (pronunced jù in Mandarin). However, in Cantonese, the two characters are pronunced kek6 and geoi1, respectively, which are totally different. Therefore, some simplified characters may cause confusion and trouble for Cantonese users.
 
 ### About regional variants of traditional Chinese characters
 
-TODO: https://ayaka.shn.hk/cc/
+TODO: 講解我哋點解唔收香港同台灣異體字，可以參考 https://ayaka.shn.hk/cc/
 
 Besides simplified characters, the issue of character variants also needs to be addressed (note that this is different from orthographic character choice, which we will discuss in the word entries section). To ensure the consistency while keeping complexities as low as possible, rime-cantonese takes advantage of Open Chinese Convert (OpenCC), an open-source library which supports multi-way conversions between different regional variants of Chinese characters. OpenCC maintains a standard for all Chinese character variants (we will call it “the OpenCC standard” or “OpenCC variants” from now on). The OpenCC standard character list keeps the most semantic contrasts between code points and servers as the baseline character variants. And with this baseline, the library can convert characters between Mainland Simplified, Hong Kong traditional, Taiwan traditional variants with this standard.
 
@@ -42,7 +42,7 @@ We recommend accompanying the OpenCC library when using rime-cantonese in applic
 
 ### About variants Chinese characters
 
-TODO:
+TODO: 講我哋唔收其他異體字，費事混亂。但有啲異體字比較常用，所以收，譬如「円」嗰啲。
 
 In spite of this, the lexicon does collect some variants Chinese characters, such as Japanese Shinjitai characters and Vietnamese Chữ Nôm for ease of retrieval and input.
 
@@ -65,11 +65,13 @@ There are multiple data sources of word entries. The majority of the entries are
 
 ### About character variant choice
 
-TODO:
+TODO: 有啲累贅，上面已經講咗。
 
 Different from char entries, which include all character variants except Simplified Chinese variants, all word entries characters are store in the form of OpenCC standard variants. One can convert the characters into Hong Kong, Taiwan or Mainland China variants with the OpenCC program based on the use case.
 
 ### About orthographic choices of characters
+
+TODO: 未檢查。
 
 Since Cantonese doesn't have an official-level orthography, rime-cantonese is aimed at promoting the standardization of written Cantonese, where the orthography of word entries are all standardized. The Cantonese community has various orthographic representations for a same linguistic unit, and they are widely used in. For example, bei2 meaning “to give; passive marker” has three common written forms: 畀, 俾 and 比. This creates unnecessary redundancies and ambiguities which may hinder the standardization process, and also increases the cost of data preprocessing in NLP tasks. To tackle this problem, we prescribe a list of recommended writing forms and convert all collected words according to this standard. The full list can be found in [Common typos in Cantonese](https://jyutping.org/en/blog/typo/). In principle, we try to map one character to one morpheme, to reduce redundancy or ambiguities.
 
