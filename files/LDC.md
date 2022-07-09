@@ -24,7 +24,7 @@ To ensure the correctness of pronunciation and the comprehensiveness of characte
 
 For characters that are missing from the primary source yet present in the supplementary sources, we normalize them before including them in our lexicon, based on the guidelines described in the following sub-sections.
 
-### About simplified Chinese
+### About Simplified Chinese
 
 Chinese texts can be written in either Traditional or Simplified Chinese. To avoid data redundancy, the lexicon should only contain one variant. Specifically, the lexicon contains Traditional Chinese and does not include any simplified Chinese characters for the following reasons.
 
@@ -74,7 +74,7 @@ The corpus consists of three CSV files: `char.csv`, `word.csv` and `phrase_fragm
 
 Note that we separate the multi-character word entries into two files, `word.csv` and `phrase_fragementcsv`. This is for the convenience of different applications. `phrase_fragementcsv.csv` contains multi-character entries that are phrases, sentences, or sentence fragments, which are usually longer in length than entries in `word.csv`.
 
-All data is stored in UTF-8 encodings. There are currently ~34k entries in `char.csv`, ~95k entries in `word.csv` and ~8k entries in `phrase_fragment.csv`
+All data is stored in UTF-8 encodings. There are currently ~34k entries in `char.csv`, ~95k entries in `word.csv` and ~8k entries in `phrase_fragment.csv`.
 
 rime-cantonese is also open sourced on GitHub at <https://github.com/CanCLID/rime-cantonese-upstream>. There is also a downstream version that is reformatted to serve as an Input Method (IME) database, link: <https://github.com/rime/rime-cantonese>.
 
