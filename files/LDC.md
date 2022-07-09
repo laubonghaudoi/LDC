@@ -40,7 +40,7 @@ We recommend accompanying the OpenCC library when using rime-cantonese in applic
 
 ### About variants Chinese characters
 
-Variant Chinese characters are Chinese characters that are homophones and synonyms. For example, 𥤚 is a variant character of 秋 (‘autumn’). These Chinese characters are not actively used in modern times. Thus, variant characters are included only in char entries and not in word entries. Particularly, some Japanese Shinjitai characters and Vietnamese Chữ Nôm are also included because they are more commonly found in daily life. For example, 円 is the Japanese variant for 圓 (“unit of currency”), while it is commonly used to describe the currency unit of Japan.
+Variant Chinese characters are Chinese characters that are homophones and synonyms. For example, 𥤚 is a variant character of 秋 ("autumn"). These Chinese characters are not actively used in modern times. Thus, variant characters are included only in char entries and not in word entries. Particularly, some Japanese Shinjitai characters and Vietnamese Chữ Nôm are also included because they are more commonly found in daily life. For example, 円 is the Japanese variant for 圓, while it is commonly used to describe the currency unit of Japan.
 
 ## Multi-character entries (word entries)
 
