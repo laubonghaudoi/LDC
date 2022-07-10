@@ -77,9 +77,3 @@ Note that we separate the multi-character word entries into two files, `word.csv
 All data is stored in the UTF-8 encoding. There are currently ~34k entries in `char.csv`, ~95k entries in `word.csv` and ~8k entries in `phrase_fragment.csv`.
 
 rime-cantonese is also open sourced on GitHub at <https://github.com/CanCLID/rime-cantonese-upstream>. There is also a downstream version that is reformatted to serve as an Input Method (IME) database at <https://github.com/rime/rime-cantonese>.
-
-## Checksums
-
-- MD5 (.//phrase_fragment.csv) = 64f1e64402f717de62990e47d2aa8ce7
-- MD5 (.//char.csv) = fd22025d6789f60a0e473124f0bdc21b
-- MD5 (.//word.csv) = 3daf6a554e0595ced71d8555a47007d6
