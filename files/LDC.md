@@ -72,9 +72,9 @@ The corpus consists of three CSV files: `char.csv`, `word.csv` and `phrase_fragm
 - `char`: The Chinese character(s) of this lexical entry
 - `jyutping`: The pronunciation in Jyutping of this lexical entry
 
-Note that we separate the multi-character word entries into two files, `word.csv` and `phrase_fragementcsv`. This is for the convenience of different applications. `phrase_fragementcsv.csv` contains multi-character entries that are phrases, sentences, or sentence fragments, which are usually longer in length than entries in `word.csv`.
+Note that we separate the multi-character word entries into two files, `word.csv` and `phrase_fragement.csv`. This is for the convenience of different applications. `phrase_fragement.csv` contains multi-character entries that are phrases, sentences, or sentence fragments, which are usually longer in length than entries in `word.csv`.
 
-All data is stored in UTF-8 encodings. There are currently ~34k entries in `char.csv`, ~95k entries in `word.csv` and ~8k entries in `phrase_fragment.csv`.
+All data is stored in the UTF-8 encoding. There are currently ~34k entries in `char.csv`, ~95k entries in `word.csv` and ~8k entries in `phrase_fragment.csv`.
 
 rime-cantonese is also open sourced on GitHub at <https://github.com/CanCLID/rime-cantonese-upstream>. There is also a downstream version that is reformatted to serve as an Input Method (IME) database at <https://github.com/rime/rime-cantonese>.
 
