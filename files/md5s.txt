@@ -1,4 +1,4 @@
 MD5 (.//phrase_fragment.csv) = 64f1e64402f717de62990e47d2aa8ce7
 MD5 (.//char.csv) = fd22025d6789f60a0e473124f0bdc21b
 MD5 (.//word.csv) = 6502f6fc454159704a9141fb7b9fa9f3
-MD5 (.//LDC.md) = 74f1b0978133391a97396c725703af62
+MD5 (.//LDC.md) = fee1c57a99b96644d1e4437a7b5711d4
