@@ -10,7 +10,7 @@
 
 The data of rime-cantonese is divided into two parts: single-character entries (`char` entries) and multi-character entries (`word` entries). `char` entries are stored in `char.csv`, while `word` entries are stored `word.csv` and `phrase_fragment.csv`. Below are their introductions, respectively.
 
-## Single-character entries (`char` Entries)
+## Single-character Entries (`char` Entries)
 
 ### Data source
 
