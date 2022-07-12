@@ -2,13 +2,13 @@
 
 **Authors:** Mingfei Lau, Muhan Zhong, Jian Su, Henry Chan, Chaak-ming Lau
 
-**Language:** This lexicon is solely in Contemporary Cantonese, the ISO 693-3 code is `yue`
+**Language:** This lexicon is solely in contemporary Cantonese. The ISO 693-3 code is `yue`
 
-**Recommended/Expected use of corpus:** Input Method (IME) lexicon, Transliteration tool, Automatic Speech Recognition (ASR) phone lexicon, Text-to-Speech (TTS) phone lexicon, Dictionary.
+**Recommended/Expected use of corpus:** Input Method (IME) lexicon, Transliteration tool, Automatic Speech Recognition (ASR) lexicon, Text-to-Speech (TTS) lexicon, dictionary.
 
 ## Collection Procedure – Format, Method, and Timespan
 
-The data of rime-cantonese is divided into two parts: single-character entries (`char` entries) and multi-character entries (`word` entries). `char` entries are stored in `char.csv`, while `word` entries are stored `word.csv` and `phrase_fragment.csv`. Below are their introductions, respectively.
+The data of rime-cantonese consists of two parts: single-character entries (`char` entries) and multi-character entries (`word` entries). The `char` entries are stored in `char.csv`, while the `word` entries are stored `word.csv` and `phrase_fragment.csv`. Below are the descriptions of the two parts.
 
 ### Single-character Entries (`char` Entries)
 
@@ -26,21 +26,23 @@ For characters that are missing from the primary source yet present in the suppl
 
 #### Regarding Simplified Chinese
 
-Chinese texts can be written in either Traditional or Simplified Chinese. To avoid data redundancy, the lexicon should only contain one variant. Specifically, the lexicon contains Traditional Chinese and does not include any simplified Chinese characters for the following reasons.
+Chinese texts can be written in either Traditional or Simplified Chinese. To avoid data redundancy, the lexicon should contain only one variant. Specifically, the lexicon contains Traditional Chinese and does not contain any simplified Chinese characters for the following reasons.
 
-The conversion from traditional Chinese to simplified Chinese is technically more accurate than that from simplified Chinese to traditional Chinese because traditional Chinese characters are less ambiguous. For example, the traditional Chinese characters 發 (“distribute; prosper”) and 髮 (“hair”) are both written as 发 in simplified Chinese. Therefore, when converting the character 发 from simplified Chinese to traditional Chinese, one must determine the correct character based on the context, which may result in a loss of accuracy. In contrast, one can convert traditional Chinese to simplified Chinese using the Open Chinese Convert (OpenCC) program with an accuracy of nearly 100%.
+Technically speaking, the conversion from traditional Chinese to simplified Chinese is more accurate than that in the opposite direction, as traditional Chinese characters are less ambiguous. For example, the traditional Chinese characters 發 (“distribute; prosper”) and 髮 (“hair”) are both written as 发 in simplified Chinese. Therefore, when converting the character 发 from simplified Chinese to traditional Chinese, one must determine the correct character based on the context, which may result in a loss of accuracy. In contrast, one can convert traditional Chinese to simplified Chinese using the Open Chinese Convert (OpenCC) program with an accuracy of nearly 100%.
 
-Simplified Chinese characters are more tailored to Mandarin Chinese than to Cantonese because some Chinese characters are simplified by replacing their phonetic components with simpler components that are homophonous in Mandarin, whereas they are not necessarily homophonous in Cantonese. For example, the traditional Chinese character 劇 is simplified as 剧 because the new phonetic component 居 (pronunced jū in Mandarin) sounds similar to the original character 劇 (pronunced jù in Mandarin). However, in Cantonese, the two characters are pronunced kek6 and geoi1, respectively, which are totally different. Therefore, some simplified characters may cause confusion and trouble for Cantonese users.
+Simplified Chinese characters are more tailored to Mandarin Chinese than to Cantonese because some Chinese characters are simplified by replacing their phonetic components with simpler components that are homophonous in Mandarin, whereas they are not necessarily homophonous in Cantonese. For example, the traditional Chinese character 劇 is simplified as 剧 because the new phonetic component 居 (pronunced jū in Mandarin) sounds similar to the original character 劇 (pronunced jù in Mandarin). However, in Cantonese, the two characters are pronunced kek6 and geoi1, which are completely different. Therefore, some simplified characters may cause confusion and problems for Cantonese users.
 
 #### Regarding Regional Variants of Traditional Chinese
 
-Apart from the difference between traditional and simplified Chinese, traditional Chinese itself also differs in different eras, regions and standards (note that this is different from orthographic character choice, which we will discuss in the word entries section). For example, the character leoi5 (“inside”) is written as 裏 in Hong Kong and 裡 in Taiwan. The OpenCC program defines the OpenCC Traditional Chinese standard. When Chinese text is written in the OpenCC standard, the conversion to Hong Kong and Taiwan variants will achieve the highest accuracy. The OpenCC standard character list keeps the most semantic contrasts between code points and servers as the baseline character variants. And with this baseline, the library can convert characters between Mainland simplified, Hong Kong traditional, Taiwan traditional variants with this standard.
+In addition to the difference between traditional and simplified Chinese, traditional Chinese itself differs in different eras, regions and standards (note that this is different from the choice of orthographic characters, which will be discussed in the `word` entries section). For example, the character leoi5 (“inside”) is written as 裏 in Hong Kong and 裡 in Taiwan. Storing all variants in the lexicon would result in data redundancy.
+
+To address this, we have adopted the OpenCC Traditional Chinese standard in our lexicon. The standard is designed for conversion between Chinese variants, which means that when Chinese text is written in the OpenCC standard, the conversion to Hong Kong and Taiwan variants will achieve the highest accuracy.
 
 We recommend accompanying the OpenCC library when using rime-cantonese in applications. For instance, when building a Cantonese transliteration module, one can generate the missing simplified Chinese variants first with OpenCC in order to get a comprehensive character-to-pronunciation mapping list.
 
 #### Regarding Variants Chinese Characters
 
-Variant Chinese characters are Chinese characters that are homophones and synonyms. For example, 亓 is a variant character of 其 (“that”). These Chinese characters are not actively used in modern times. Thus, variant characters are included only in char entries and not in word entries. Particularly, some Japanese Shinjitai characters and Vietnamese Chữ Nôm are also included because they are more commonly found in daily life. For example, 円 is the Japanese variant for 圓, while it is commonly used to describe the currency unit of Japan.
+Variant Chinese characters are Chinese characters that are homophones and synonyms. For example, 亓 is a variant character of 其 (“its”). These Chinese characters are not actively used in modern times. Thus, variant characters are included only in char entries and not in word entries. Particularly, some Japanese Shinjitai characters and Vietnamese Chữ Nôm are also included because they are more commonly found in daily life. For example, 円 is the Japanese variant for 圓, while it is commonly used to describe the currency unit of Japan.
 
 ### Multi-character Entries (`word` Entries)
 
@@ -61,7 +63,7 @@ There are multiple data sources of word entries. The majority of the entries are
 
 #### Regarding Orthographic Choices of Characters
 
-Since Cantonese doesn’t have an official-level orthography, rime-cantonese is aimed at promoting the standardization of written Cantonese, where the orthography of word entries are all standardized. The Cantonese community has various orthographic representations for a same linguistic unit, and they are widely used in. For example, bei2 meaning “to give; passive marker” has three common written forms: 畀, 俾 and 比. This creates unnecessary redundancies and ambiguities which may hinder the standardization process, and also increases the cost of data preprocessing in NLP tasks. To tackle this problem, we prescribe a list of recommended writing forms and convert all collected words according to this standard. The full list can be found in [Common typos in Cantonese](https://jyutping.org/en/blog/typo/). In principle, we try to map one character to one morpheme, to reduce redundancy or ambiguities.
+As no official-level orthography exists for Cantonese, we aim to promote the standardization of written Cantonese through our lexicon, in which the orthography of `word` entries are standardized. Due to the lack of standardization, the Cantonese community uses various orthographic representations for the same linguistic unit. For example, bei2 meaning “to give; passive marker” has three common written forms: 畀, 俾 and 比. This creates redundancies and ambiguities and also increases the cost of data preprocessing in NLP tasks. To tackle this problem, we prescribe a list of recommended writing forms and convert all collected words according to this standard. The full list can be found in [Common typos in Cantonese](https://jyutping.org/en/blog/typo/). In principle, we try to map one character to one morpheme, to reduce redundancy or ambiguities.
 
 Cantonese is known for its abundant sentence-final particles, and the Cantonese community currently doesn’t have a consistent way of writing them. Luke (2007) compiled a list of recommended written form for Cantonese sentence particles. We made some adjustments to it to keep necessary contrasts. The full list can be found in [Cantonese Sentence Particles](https://jyutping.org/en/blog/particles/).
 
